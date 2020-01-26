@@ -9,6 +9,8 @@ Plug 'fatih/vim-go'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree' 
+Plug 'tpope/vim-fugitive'
+Plug 'yegappan/mru'
 call plug#end()
 
 " File tree browser
@@ -25,7 +27,7 @@ noremap [q :cp<CR>
 let mapleader=","
 noremap <leader>s :%s/
 noremap <leader>f :FZF<ENTER>
-noremap <leader>a "zyiw:exe " Ag ".@z."" <CR>
+noremap <leader>a "zyiw:exe " Ag --ignore=tags ".@z."" <CR>
 noremap <leader>w yiw
 noremap <leader>p viwp
 
@@ -40,4 +42,7 @@ syntax on
 
 noremap <space> :noh<cr>
 
-map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=log * <CR>
+map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=build --exclude=log *  <CR>
+
+"mru
+noremap <leader>m :MRU<ENTER> | fzf
