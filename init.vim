@@ -12,6 +12,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'yegappan/mru'
 Plug 'https://github.com/tell-k/vim-autopep8'
+Plug 'https://github.com/tpope/vim-surround'
 call plug#end()
 
 "autopep 8
