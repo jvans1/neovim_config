@@ -11,7 +11,13 @@ Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree' 
 Plug 'tpope/vim-fugitive'
 Plug 'yegappan/mru'
+Plug 'https://github.com/tell-k/vim-autopep8'
 call plug#end()
+
+"autopep 8
+let g:autopep8_on_save = 1
+let g:autopep8_disable_show_diff=1
+
 
 " File tree browser
 map \ :NERDTreeToggle<CR>
