@@ -53,3 +53,13 @@ map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=build --exclud
 
 "mru
 noremap <leader>m :MRU<ENTER> | fzf
+
+
+"autocomplete braces
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
