@@ -13,7 +13,18 @@ Plug 'tpope/vim-fugitive'
 Plug 'yegappan/mru'
 Plug 'https://github.com/tell-k/vim-autopep8'
 Plug 'https://github.com/tpope/vim-surround'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'nvie/vim-flake8'
 call plug#end()
+
+
+"java 
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+nmap <F5> <Plug>(JavaComplete-Imports-Add)
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+
 
 "autopep 8
 let g:autopep8_on_save = 1
@@ -53,3 +64,7 @@ map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=build --exclud
 
 "mru
 noremap <leader>m :MRU<ENTER> | fzf
+
+"auto flake8
+"autocmd BufWritePost *.py call flake8#Flake8()
+
