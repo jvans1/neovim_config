@@ -15,6 +15,7 @@ Plug 'https://github.com/tell-k/vim-autopep8'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'nvie/vim-flake8'
+Plug 'vim-python/python-syntax'
 call plug#end()
 
 
@@ -27,8 +28,8 @@ nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 
 "autopep 8
-let g:autopep8_on_save = 1
-let g:autopep8_disable_show_diff=1
+let g:autopep8_on_save = 0
+let g:autopep8_disable_show_diff=0
 
 
 " File tree browser
@@ -66,8 +67,9 @@ map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=build --exclud
 noremap <leader>m :MRU<ENTER> | fzf
 
 "auto flake8
-autocmd BufWritePost *.py call flake8#Flake8()
-
+let g:flake8_show_quickfix=0  " don't show
+let g:flake8_show_in_gutter=1
+nmap <leader>ff :call flake8#Flake8()<cr>
 
 "autocomplete braces
 inoremap " ""<left>
@@ -77,3 +79,7 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+
+"python syntax
+let g:python_highlight_all=1
