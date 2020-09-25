@@ -66,5 +66,14 @@ map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=build --exclud
 noremap <leader>m :MRU<ENTER> | fzf
 
 "auto flake8
-"autocmd BufWritePost *.py call flake8#Flake8()
+autocmd BufWritePost *.py call flake8#Flake8()
 
+
+"autocomplete braces
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
